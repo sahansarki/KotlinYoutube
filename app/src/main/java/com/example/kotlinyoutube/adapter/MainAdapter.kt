@@ -4,10 +4,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.example.kotlinyoutube.Models.HomeFeed
+import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.video_row.view.*
 
 class MainAdapter(val homeFeed : HomeFeed) : RecyclerView.Adapter<CustomViewHolder>() {
-    val videoTitles = listOf("First title" , "Second" , "3rd" , "MORE TITLE")
     override fun getItemCount(): Int {
         return homeFeed.videos.count()
     }
@@ -19,7 +20,18 @@ class MainAdapter(val homeFeed : HomeFeed) : RecyclerView.Adapter<CustomViewHold
     }
 
     override fun onBindViewHolder(holder: CustomViewHolder, position: Int) {
-        holder.view.textView_video_title.text = homeFeed.videos.get(position).name
+
+        val video = homeFeed.videos.get(position)
+        holder.view.textView_video_title.text = video.name
+
+        holder.view.textView_channel_name.text = video.channel.name + " + " + "${video.channel.numberOfSubscribers}" + " Views!\n" + "2 days ago"
+
+        val thumbnailImageView = holder.view.imageView_video_thumbnail
+        Picasso.get().load("${video.imageUrl}").into(thumbnailImageView)
+
+        val channelPrfoileImageView = holder.view.imageView_channel_profile
+        Picasso.get().load("${video.channel.profileimageUrl}").into(channelPrfoileImageView)
+
     }
 
 

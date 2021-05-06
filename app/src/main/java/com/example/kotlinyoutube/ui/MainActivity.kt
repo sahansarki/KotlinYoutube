@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.kotlinyoutube.Models.HomeFeed
 import com.google.gson.GsonBuilder
 import kotlinx.android.synthetic.main.activity_main.*
 import okhttp3.*
@@ -57,8 +58,3 @@ class MainActivity : AppCompatActivity() {
 
 }
 
-data class HomeFeed(val videos: List<Video>)
-
-data class Video(val id: Int , val name: String, val link : String, val imageUrl: String, val numberOfView: Int, val channel : Channel)
-
-data class Channel(val name: String, val profileImageUrl: String , val numberOfSubscribers: Int)

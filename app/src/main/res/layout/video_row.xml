@@ -7,21 +7,47 @@
 
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/imageView_video_thumbnail"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        android:src="@mipmap/ic_launcher"
+        app:layout_constraintDimensionRatio="16:9"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:src="@mipmap/ic_launcher" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textView_video_title"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:paddingLeft="5dp"
         android:text="VideoTitle"
+        android:layout_marginTop="8dp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imageView_channel_profile"
+        app:layout_constraintTop_toBottomOf="@+id/imageView_video_thumbnail" />
+
+    <TextView
+        android:id="@+id/textView_channel_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:paddingLeft="5dp"
+        android:text="Channel Name"
+        android:layout_marginTop="8dp"
+        android:paddingBottom="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/textView_video_title"
+        app:layout_constraintTop_toBottomOf="@+id/textView_video_title" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/imageView_channel_profile"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:src="@mipmap/ic_launcher"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView_video_thumbnail" />
 </androidx.constraintlayout.widget.ConstraintLayout>
