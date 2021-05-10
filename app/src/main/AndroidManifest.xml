@@ -5,6 +5,7 @@
     <uses-permission android:name="android.permission.INTERNET"/>
 
     <application
+        android:usesCleartextTraffic="true"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -27,6 +28,15 @@
 
             <meta-data android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MainActivity"/>
+
+        </activity>
+
+        <activity android:name=".ui.CourseLessonActivity"
+            android:label="Course Lesson"
+            android:launchMode="singleTop" >
+
+            <meta-data android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ui.CourseDetailActivity"/>
 
         </activity>
     </application>
